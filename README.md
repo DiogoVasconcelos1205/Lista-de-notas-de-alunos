@@ -1,6 +1,5 @@
 Implementei um menu interativo para gerenciar uma lista de notas de
-alunos. O menu oferece as opções: [1] Adicionar nota ao final usando
-(.push_back); [2] Remover ultima nota com (.pop_back); [3] Ver
-primeira nota (.front); [4] Ver ultima nota (.back); [5] Ver total de
-notas (.size); [6] Verificar se a lista está vazia (.empty); [7]
-Limpar todas as notas (.clear); [0] Sair. O programa repetindo o menu ate o usuário escolher sair.
+alunos. O menu oferece as opções: [1] Adicionar nota, [2] Remover ultima nota, [3] Ver
+primeira nota, [4] Ver ultima nota, [5] Ver total de
+notas, [6] Verificar se a lista está vazia, [7]
+Limpar todas as notas, [0] Sair. O programa repetindo o menu ate o usuário escolher sair.
