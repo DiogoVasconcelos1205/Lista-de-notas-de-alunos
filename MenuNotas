@@ -2,91 +2,91 @@
 #include <vector>
 using namespace std;
 
-
-int main()
- {
-   vector<double>menu;
-   int opcao;
-   double nota;
-   do{
-     cout <<"============================"<<endl;
+int main() {
+	
+	
+	vector<double>menu;
+	int opcao;
+	double nota;
+	
+	do{
+	 cout <<"============================"<<endl;
      cout <<"GERENCIADOR DE NOTAS"<<endl;  
      cout <<"============================"<<endl;
-     cout << "Escolha uma opção."<<endl;
-     cout << "[1] Adicionar nota"<<endl;
-     cout << "[2] Remover ultima nota"<<endl;
-     cout << "[3] Ver primeira nota"<<endl;
-     cout << "[4] Ver ultima nota"<<endl;
-     cout << "[5] Total de notas"<<endl;
-     cout << "[6] Lista esta vazia?"<<endl;
-     cout << "[7] Limpar todas as notas"<<endl;
-     cout << "[0] Sair"<<endl;
-     cout << "Escolha uma opção."<<endl;
-     cin >> opcao;
-     
-     switch(opcao){
+	 cout << "Escolha uma opção entre [1] a [7], digite [0] para sair"<<endl;
+	 cin >> opcao;
+	 
+	 
+	 	switch(opcao){
          case 1:
-         cout << "Digite a nota" <<endl;
+         cout << "Você escolheu adicionar nota."<<endl;
+		 cout << "Digite a nota:" <<endl;
          cin >> nota;
-         menu.push_back(nota);
-         
+         menu.push_back(nota); //Coloca a nota no final da lista.
          cout <<"Nota " << nota << " adicionada" << endl;
          
          break;
          
          case 2:
-         if (menu.size() > 0) {
-            menu.pop_back();
-           cout << "Ultima nota " << nota << " removida" ;  
-         }
+         cout << "Você escolheu remover a ultima nota"<<endl;
+		 if(menu.size() > 0){  //Ele vai retornar a quantidade de notas guardadas.
+          double removida = menu.back(); // Guarda quem está no topo
+		  menu.pop_back(); // ele remove o ultimo valor da lista
+          cout << "Ultima nota " << nota << " removida" <<endl;
+           } 	
          break;
          
          case 3:
-         if (menu.size() > 0) {
-           cout << "Primeira nota " << menu.front();  
+		 if (menu.size() > 0) { //retornando a quantidade de notas guardadas
+        	cout << "Você escolheu ver primeira nota."<<endl;
+		   	cout << "Primeira nota " << menu.front() << endl; // .front serve para acessar o primeiro valor da lista. 
          }
          break;
-         case 4:
-         if (!menu.empty()) {
-           cout << "Ultima nota" << menu.front() <<endl;  
-         }else {
-                    cout << "Lista vazia." << endl;
-                }
-                break;
          
-         case 5:
-         cout <<"Notas: " <<endl;
-         for(int i = 0 ; i < menu.size(); i++){
+          case 4:
+         if (!menu.empty()) {
+        	cout << "Você escolheu ver a ultima nota."<<endl;
+			cout << "Ultima nota: " << menu.back() <<endl; // ele vai ver o ultimo elemento da lista..
+         }else {
+            cout << "Lista vazia." << endl;
+        }
+        break;
+        case 5:
+         cout << "Você escolheu ver todas as notas."<<endl;
+		 cout <<"Notas: " <<endl;
+         for(int i = 0 ; i < menu.size(); i++){ // um lopping para pecorrer o vetor até encontrar todos os valores que foram listados.
              cout << menu[i] <<" | ";
          }
         cout << " \n ";
-        
-        case 6:
-        if (menu.empty() ) {
-           cout << "Esta vazio"<<endl;
-           
-           
+         break;
+         case 6:
+         cout << "Você escolheu ver se a lista ta vazia ou não."<<endl;
+		 if (menu.empty() ) { //  Retifica se o vetor está vazio (retorna bool)
+         cout << "A lista está vazia"<<endl;
+  
          }else{
-         cout <<"Está cheio"<<endl;
-          break;
+         cout <<"A lista está cheia"<<endl;
+          
          }
+         break;
          case 7:
-         menu.clear();
-         cout << "limpo" <<endl;
-     
-         case 0:
-         cout << "Encerrando..." << endl;
+         menu.clear(); // Ele vai apagar todos os valores, com isso o vetor vai ficar com o tamanho zero.
+         cout << "Você escolheu limpar a lista de notas " <<endl;
+		       cout << "A lista de notas foi limpa" <<endl;
          break;
          
+         case 0:
+         cout << "Saindo..." << endl;
+        break;
          default:
          cout <<"Opção invalida " <<endl;
          break;
-         
-     }
-    
-       
-   }
-   while(opcao !=0);
-
-    return 0;
+	 
+	 }
+	 	
+	}
+	while(opcao !=0);
+	cout << "Programa encerrado." << endl;
+   
+	return 0;
 }
