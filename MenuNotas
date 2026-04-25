@@ -1,0 +1,92 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+
+int main()
+ {
+   vector<double>menu;
+   int opcao;
+   double nota;
+   do{
+     cout <<"============================"<<endl;
+     cout <<"GERENCIADOR DE NOTAS"<<endl;  
+     cout <<"============================"<<endl;
+     cout << "Escolha uma opção."<<endl;
+     cout << "[1] Adicionar nota"<<endl;
+     cout << "[2] Remover ultima nota"<<endl;
+     cout << "[3] Ver primeira nota"<<endl;
+     cout << "[4] Ver ultima nota"<<endl;
+     cout << "[5] Total de notas"<<endl;
+     cout << "[6] Lista esta vazia?"<<endl;
+     cout << "[7] Limpar todas as notas"<<endl;
+     cout << "[0] Sair"<<endl;
+     cout << "Escolha uma opção."<<endl;
+     cin >> opcao;
+     
+     switch(opcao){
+         case 1:
+         cout << "Digite a nota" <<endl;
+         cin >> nota;
+         menu.push_back(nota);
+         
+         cout <<"Nota " << nota << " adicionada" << endl;
+         
+         break;
+         
+         case 2:
+         if (menu.size() > 0) {
+            menu.pop_back();
+           cout << "Ultima nota " << nota << " removida" ;  
+         }
+         break;
+         
+         case 3:
+         if (menu.size() > 0) {
+           cout << "Primeira nota " << menu.front();  
+         }
+         break;
+         case 4:
+         if (!menu.empty()) {
+           cout << "Ultima nota" << menu.front() <<endl;  
+         }else {
+                    cout << "Lista vazia." << endl;
+                }
+                break;
+         
+         case 5:
+         cout <<"Notas: " <<endl;
+         for(int i = 0 ; i < menu.size(); i++){
+             cout << menu[i] <<" | ";
+         }
+        cout << " \n ";
+        
+        case 6:
+        if (menu.empty() ) {
+           cout << "Esta vazio"<<endl;
+           
+           
+         }else{
+         cout <<"Está cheio"<<endl;
+          break;
+         }
+         case 7:
+         menu.clear();
+         cout << "limpo" <<endl;
+     
+         case 0:
+         cout << "Encerrando..." << endl;
+         break;
+         
+         default:
+         cout <<"Opção invalida " <<endl;
+         break;
+         
+     }
+    
+       
+   }
+   while(opcao !=0);
+
+    return 0;
+}
