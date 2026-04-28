@@ -13,10 +13,18 @@ int main() {
 	 cout <<"============================"<<endl;
      cout <<"GERENCIADOR DE NOTAS"<<endl;  
      cout <<"============================"<<endl;
-	 cout << "Escolha uma opção entre [1] a [7], digite [0] para sair"<<endl;
-	 cin >> opcao;
-	 
-	 
+	   cout << "Escolha uma opção."<<endl;
+     cout << "[1] Adicionar nota"<<endl;
+     cout << "[2] Remover ultima nota"<<endl;
+     cout << "[3] Ver primeira nota"<<endl;
+     cout << "[4] Ver ultima nota"<<endl;
+     cout << "[5] Total de notas"<<endl;
+     cout << "[6] Lista esta vazia?"<<endl;
+     cout << "[7] Limpar todas as notas"<<endl;
+     cout << "[0] Sair"<<endl;
+     cout << "Escolha uma opção."<<endl;
+     cin >> opcao;
+
 	 	switch(opcao){
          case 1:
          cout << "Você escolheu adicionar nota."<<endl;
