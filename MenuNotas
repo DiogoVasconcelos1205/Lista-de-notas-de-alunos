@@ -2,18 +2,16 @@
 #include <vector>
 using namespace std;
 
-int main() {
+int op(){
 	
+	int opcao{};
 	
-	vector<double>menu;
-	int opcao;
-	double nota;
 	
 	do{
 	 cout <<"============================"<<endl;
      cout <<"GERENCIADOR DE NOTAS"<<endl;  
      cout <<"============================"<<endl;
-	   cout << "Escolha uma opção."<<endl;
+	cout << "Escolha uma opção."<<endl;
      cout << "[1] Adicionar nota"<<endl;
      cout << "[2] Remover ultima nota"<<endl;
      cout << "[3] Ver primeira nota"<<endl;
@@ -23,9 +21,27 @@ int main() {
      cout << "[7] Limpar todas as notas"<<endl;
      cout << "[0] Sair"<<endl;
      cout << "Escolha uma opção."<<endl;
-     cin >> opcao;
 
-	 	switch(opcao){
+	 cin >> opcao;
+	 
+
+	}
+	while(opcao < 0 || opcao > 7);
+
+	return opcao;
+}
+
+	
+void programa(vector<double>menu){
+	int opcao;
+	double nota;
+	
+	do{
+		
+	opcao = op ();
+	
+	
+	switch(opcao){
          case 1:
          cout << "Você escolheu adicionar nota."<<endl;
 		 cout << "Digite a nota:" <<endl;
@@ -90,11 +106,21 @@ int main() {
          cout <<"Opção invalida " <<endl;
          break;
 	 
-	 }
-	 	
+	 }	
+		
 	}
 	while(opcao !=0);
-	cout << "Programa encerrado." << endl;
+	
+	
+	
+	}
+
+
+int main() {
+    vector<double>Menu;
+
+	programa (Menu);
+
    
 	return 0;
 }
